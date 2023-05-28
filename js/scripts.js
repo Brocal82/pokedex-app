@@ -10,50 +10,52 @@ let pokemonRepository = (function () {
 ];
 
 
+function add (pokemon) {
+   if (typeof pokemon === 'object') {
+        pokemonList.push(pokemon);
+   } else {
+    console.log('input is incorrect');
+   }
+}
+
 function getAll() {
     return pokemonList;
 }
-
-
-function add (pokemon) {
-    pokemonList.push(pokemon);
-}
-
-
-pokemonList.forEach (function (printArrayDetails) {
-    
-    
-    if (printArrayDetails.heights < 1 && printArrayDetails.heights > 0.3) {
-        
-        document.write(printArrayDetails.name + " is a small Pokemon " + printArrayDetails.heights + " (heights)" + '<br>');
-        
-        
-    }else if (printArrayDetails.heights < 1.5 && printArrayDetails.heights > 1) {
-        
-        document.write(printArrayDetails.name + " is a medium Pokemon " + printArrayDetails.heights + " (heights)"+ '<br>');
-        
-    }else if (printArrayDetails.heights >= 1.7) {
-        
-        document.write(printArrayDetails.name + " is a big Pokemon " + printArrayDetails.heights + " (heights)"+ " WOW This one is a big one!!!!" + '<br>');
-        
-    }else {
-        
-        document.write(printArrayDetails.name + " is a big Pokemon " + printArrayDetails.heights + " (heights)" + '<br>');
-    }
-});
-
 
 return {
     add: add,
     getAll: getAll
 }
 
-
 }) ();
 
+
+function listPokemon(pokemon) {
+    
+    
+    if (pokemon.heights < 1 && pokemon.heights > 0.3) {
+        
+        document.write(pokemon.name + " is a small Pokemon " + pokemon.heights + " (heights)" + '<br>');
+        
+        
+    }else if (pokemon.heights < 1.5 && pokemon.heights > 1) {
+        
+        document.write(pokemon.name + " is a medium Pokemon " + pokemon.heights + " (heights)"+ '<br>');
+        
+    }else if (pokemon.heights >= 1.7) {
+        
+        document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights)"+ " WOW This one is a big one!!!!" + '<br>');
+        
+    }else {
+        
+        document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights)" + '<br>');
+    }
+};
+
+
 console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Antonio'});
-console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: 'Quilava', heights: 1.3, type: 'fire'});
+console.log(pokemonRepository.getAll().forEach(listPokemon));
 
 
 
@@ -62,42 +64,46 @@ console.log(pokemonRepository.getAll());
 
 
 
-// function printArrayDetails() {
+
+
+
+
+// function pokemon() {
 
 //     for (let i = 0; i < pokemonList.length; i++) {
 
-//         if (printArrayDetails.heights < 1 && printArrayDetails.heights > 0.3) {
+//         if (pokemon.heights < 1 && pokemon.heights > 0.3) {
     
-//             document.write(printArrayDetails.name + " is a small Pokemon " + printArrayDetails.heights + " (heights)" + '<br>');
+//             document.write(pokemon.name + " is a small Pokemon " + pokemon.heights + " (heights)" + '<br>');
     
     
-//         }else if (printArrayDetails.heights < 1.5 && printArrayDetails.heights > 1) {
+//         }else if (pokemon.heights < 1.5 && pokemon.heights > 1) {
             
-//             document.write(printArrayDetails.name + " is a medium Pokemon " + printArrayDetails.heights + " (heights)"+ '<br>');
+//             document.write(pokemon.name + " is a medium Pokemon " + pokemon.heights + " (heights)"+ '<br>');
     
-//         }else if (printArrayDetails.heights >= 1.7) {
+//         }else if (pokemon.heights >= 1.7) {
     
-//             document.write(printArrayDetails.name + " is a big Pokemon " + printArrayDetails.heights + " (heights)"+ " WOW This one is a big one!!!!" + '<br>');
+//             document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights)"+ " WOW This one is a big one!!!!" + '<br>');
     
 //         }else {
     
-//             document.write(printArrayDetails.name + " is a big Pokemon " + printArrayDetails.heights + " (heights)" + '<br>');
+//             document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights)" + '<br>');
 //         }
 //         }  
 // }
 
 // //The Array is printed as many times as the function is called
-// printArrayDetails(); 
-// printArrayDetails();
-// printArrayDetails();
+// pokemon(); 
+// pokemon();
+// pokemon();
 
 //----------------------------------------------------------------------------------------------------------------------------
 
 //forEach function:
 
-// pokemonList.forEach(function(printArrayDetails) {
-//     console.log(printArrayDetails);
+// pokemonList.forEach(function(pokemon) {
+//     console.log(pokemon);
 // });
 
 
-// printArrayDetails();
+// pokemon();
