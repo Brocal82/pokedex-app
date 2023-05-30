@@ -9,51 +9,59 @@ let pokemonRepository = (function () {
     {name:'Golbat', heights:1.6, type: ['poison', 'flying']}
 ];
 
-
 function add (pokemon) {
-   if (typeof pokemon === 'object') {
-        pokemonList.push(pokemon);
-   } else {
-    console.log('input is incorrect');
-   }
+    if (typeof pokemon === 'object') {
+            pokemonList.push(pokemon);
+    } else {
+        console.log('input is incorrect');
+    }
 }
 
 function getAll() {
     return pokemonList;
 }
 
+function addListItem(pokemon) {
+
+    let pokemonListItems = document.querySelector('.pokemon-list');
+
+    let listItem = document.createElement('li');
+
+    let button = document.createElement('button'); 
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-button');  //Creating class to give style
+    listItem.appendChild(button);
+
+    pokemonListItems.appendChild(listItem);
+    
+    button.addEventListener('click', function() { //No need to select button with querySelector(). Variable already created (button)
+        showDetails(pokemon); //Calling function showDetails
+
+    });
+
+};
+
+function showDetails(pokemon) {
+    console.log(pokemon);
+}
+
 return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
 }
 
 }) ();
 
 
-function listPokemon(pokemon) {
-    
-    
-    if (pokemon.heights < 1 && pokemon.heights > 0.3) {
-        
-        document.write(pokemon.name + " is a small Pokemon " + pokemon.heights + " (heights) " + "type: " + pokemon.type + '<br>');
-        
-        
-    }else if (pokemon.heights < 1.5 && pokemon.heights > 1) {
-        
-        document.write(pokemon.name + " is a medium Pokemon " + pokemon.heights + " (heights) "+ "type: " + pokemon.type + '<br>');
-        
-    }else if (pokemon.heights >= 1.7) {
-        
-        document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights) "+ "type: " + pokemon.type + " WOW This one is a big one!!!!" + '<br>');
-        
-    }else {
-        
-        document.write(pokemon.name + " is a big Pokemon " + pokemon.heights + " (heights) " + "type: " + pokemon.type + '<br>');
-    }
-};
+pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+});
 
-
-console.log(pokemonRepository.getAll());
 pokemonRepository.add({ name: 'Quilava', heights: 1.3, type: 'fire'});
-console.log(pokemonRepository.getAll().forEach(listPokemon));
+
+console.log(pokemonRepository.getAll().forEach( function () {
+
+}))
+
 
