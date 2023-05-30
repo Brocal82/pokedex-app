@@ -1,0 +1,41 @@
+.pokemon-button {
+    display: inline-block;
+    background-color: #FFF4C6;
+    border: 3px solid #DAB82A;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+    
+}
+button:hover{
+    opacity: 0.8;
+    font-size: 25px;
+    color: black; 
+    transition: opacity 0.9s, 0.6s font-size;
+}
+
+.pokemon-list {
+    text-align: center;
+    list-style-type: none;
+}
+
+.titulo {
+    text-align: center;
+    color: orangered;
+    
+}
+
+@media (min-width: 768px) {
+    body, h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
