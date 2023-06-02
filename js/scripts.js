@@ -1,13 +1,9 @@
+
 let pokemonRepository = (function () {
 
-    let pokemonList = [
+    let pokemonList = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/'
 
-    {name:'Pikachu', heights:0.4, type: ['electric']},
-    {name:'Spearow', heights:0.3, type: ['flying', 'normal']},
-    {name:'Charizard', heights:1.7, type: ['fire', 'flying']},
-    {name:'Mr.Mime', heights:1.3, type: ['Psychic', 'Fairy']},
-    {name:'Golbat', heights:1.6, type: ['poison', 'flying']}
-];
 
 function add (pokemon) {
     if (typeof pokemon === 'object') {
@@ -41,27 +37,74 @@ function addListItem(pokemon) {
 
 };
 
-function showDetails(pokemon) {
-    console.log(pokemon);
+function loadList() {
+
+    return fetch(apiUrl).then(function (response) {
+
+        return response.json();
+    })
+
+    .then(function (json) {
+
+        json.results.forEach(function (item) {
+            let pokemon = {
+                name: item.name,
+                detailsUrl: item.url
+            };
+            add(pokemon);
+        })
+    })
+
+    .catch(function (error) {
+        console.log(error);
+    })
 }
+    
+
+function loadDetails (pokemon) {
+
+    let url = pokemon.detailsUrl;
+
+    return fetch(url)
+        .then(function(response) {
+        return response.json();
+    })
+
+        .then(function (details) {
+        pokemon.imgUrl = details.imgUrl;
+        pokemon.height = details.height
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+}
+
+function showDetails(item) {
+    pokemonRepository.loadDetails(item)
+    console.log(item);
+}
+
 
 return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails
 }
 
 }) ();
 
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+    pokemonRepository.getAll().forEach(function(pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    })
 });
 
 pokemonRepository.add({ name: 'Quilava', heights: 1.3, type: 'fire'});
 
-console.log(pokemonRepository.getAll().forEach( function () {
+// console.log(pokemonRepository.getAll().forEach( function () {
 
-}))
+// }))
 
 
