@@ -1,7 +1,11 @@
+body {
+    background-color: black;
+}
+
 .pokemon-button {
     display: inline-block;
-    background-color: #FFF4C6;
-    border: 3px solid #DAB82A;
+    background-color: #FFFF00;
+    border: 3px solid #FFAA00 ;
     text-align: center;
     text-decoration: none;
     padding: 10px 30px;
@@ -21,20 +25,34 @@ button:hover{
     transition: opacity 0.9s, 0.6s font-size;
 }
 
+.header {
+    background-color: #0D49d2;
+    padding: 20px;
+}
+
 .pokemon-list {
+    background-color: #FF0000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     text-align: center;
     list-style-type: none;
+    padding: 50px;
+    margin-top: 40px;
+
 }
 
 .titulo {
     text-align: center;
-    color: orangered;
+    color: #FFFF00;
+    font-size: 80px;
     
 }
 
-@media (min-width: 768px) {
-    body, h1 {
-        display: flex;
+@media (max-width: 768px) {
+    .pokemon-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-items: center;
     }

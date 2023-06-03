@@ -1,8 +1,7 @@
-
 let pokemonRepository = (function () {
 
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/'
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
 
 
 function add (pokemon) {
@@ -25,13 +24,13 @@ function addListItem(pokemon) {
 
     let button = document.createElement('button'); 
     button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');  //Creating class to give style
+    button.classList.add('pokemon-button');            //Creating class to give style
     listItem.appendChild(button);
 
     pokemonListItems.appendChild(listItem);
     
-    button.addEventListener('click', function() { //No need to select button with querySelector(). Variable already created (button)
-        showDetails(pokemon); //Calling function showDetails
+    button.addEventListener('click', function() {      //No need to select button with querySelector(). Variable already created (button)
+        showDetails(pokemon);                          //Calling function showDetails
 
     });
 
@@ -39,48 +38,49 @@ function addListItem(pokemon) {
 
 function loadList() {
 
-    return fetch(apiUrl).then(function (response) {
+    return fetch(apiUrl).then(function (response) {    //Get info from API
 
-        return response.json();
-    })
+        return response.json();                        //Translate it to json so all browsers can read 
+                            
+    }).then(function (json) {                                            
 
-    .then(function (json) {
-
-        json.results.forEach(function (item) {
+        json.results.forEach(function (item) {         // then loop on each pokemon over name and url (sprites)
             let pokemon = {
                 name: item.name,
                 detailsUrl: item.url
             };
-            add(pokemon);
-        })
-    })
 
-    .catch(function (error) {
+            add(pokemon);                              //and add it to the list
+        })
+
+    }).catch(function (error) {                        //just in case the browser does not support
+
         console.log(error);
     })
 }
     
 
-function loadDetails (pokemon) {
+function loadDetails (pokemon) {                       
 
     let url = pokemon.detailsUrl;
 
-    return fetch(url)
-        .then(function(response) {
-        return response.json();
-    })
+    return fetch(url).then(function (response) {      //Get details from pokemon
 
-        .then(function (details) {
+        return response.json();                       //Translate it to json
+
+    }).then(function (details) {                      
+
         pokemon.imgUrl = details.imgUrl;
         pokemon.height = details.height
-    })
-    .catch(function (error) {
+
+    }).catch(function (error) {
+
         console.log(error);
     })
 }
 
 function showDetails(item) {
-    pokemonRepository.loadDetails(item)
+    pokemonRepository.loadDetails(item)              
     console.log(item);
 }
 
@@ -101,10 +101,6 @@ pokemonRepository.loadList().then(function() {
     })
 });
 
-pokemonRepository.add({ name: 'Quilava', heights: 1.3, type: 'fire'});
 
-// console.log(pokemonRepository.getAll().forEach( function () {
-
-// }))
 
 
