@@ -88,9 +88,9 @@ function showDetails(pokemon) {
 
         showModal(modalTitle, modalText);
 
-        let modalContent = document.querySelector('.modal');
+        let modalContent = document.querySelector('.modal'); 
 
-        let pokemonImage = document.createElement('img');
+        let pokemonImage = document.createElement('img');  //Creating img, class and calling
         pokemonImage.classList.add('pokemon-image');
         pokemonImage.src = pokemon.imgUrl;
         pokemonImage.alt = pokemon.name;
@@ -181,34 +181,35 @@ function showDialog(title, text) {
     }, () => {
         alert('not confirmed');
     });
-  });
-    
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();
+    });
+
+  //Closing Modal window by pressing ESC
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) { 
+            hideModal();
+        }
+    });
+        
+    //Closing Modal window by clicking anywhere over the layout
+    modalContainer.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target === modalContainer) {
+            hideModal();
+        }
+    });
+
+    document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal('Modal title', 'This is the modal content');
+    });
+
+    //-----------------------------------------------------------------------
+    return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem,
+        loadList: loadList,
+        loadDetails: loadDetails
     }
-});
-    
-
-modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-        hideModal();
-    }
-});
-
-document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('Modal title', 'This is the modal content');
-});
-
-//-----------------------------------------------------------------------
-return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails
-}
 
 }) ();
 
