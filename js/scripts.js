@@ -73,7 +73,10 @@ function loadDetails (pokemon) {
     }).then(function (details) {                      
         
         pokemon.imgUrl = details.sprites.front_default;
-        pokemon.height = details.height
+        pokemon.height = details.height;
+        pokemon.types = details.types.map(function (type) {
+            return type.type.name;
+        });
 
     }).catch(function (error) {
         
@@ -84,7 +87,7 @@ function loadDetails (pokemon) {
 function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function() {
         let modalTitle = pokemon.name;
-        let modalText = "Height: " + pokemon.height;
+        let modalText = "Height: " + pokemon.height + "\n\nTypes: " + pokemon.types.join(", ");
 
         showModal(modalTitle, modalText);
 
