@@ -158,7 +158,7 @@ button:hover{
     margin-bottom: 0;
     font-weight: bold;
     font-size: 30px;
-    color: red;
+    color: white;
 }
 
 .modal {
@@ -176,7 +176,8 @@ button:hover{
     display: block;
 }
 
-#show-modal {    /*this hide the show modal button on the main screen*/
+#show-modal,
+#show-dialog {    /*this hide the show modal/dialog button from the main screen*/
     display: none; 
 }
 
