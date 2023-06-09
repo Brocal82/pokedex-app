@@ -42,35 +42,22 @@ button:hover{
 }
 .contain_header {
     display: block;
+    flex-direction: column;
+}
+
+.navbar {
+    justify-content: center;
+}
+
+.navbar-nav {
+    margin: auto; /*centra horizontalmente los elementos del menu */
     
 }
 
-/* .nav_pokemon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-type: none;
-    font-size: 30px;
-} */
-
-/* .li_nav {
-    color: white;
-    margin-top: 10px;
-    background-color: #3d7dca;
-    border-radius: 5px;
-    border: 5px solid black;
-    font-weight: bold;
-    text-transform: uppercase;
-} */
-
-/* a {
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-} */
+.nav-item {
+    text-align: center;
+}
     
-
-
 .pokemon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -181,11 +168,6 @@ button:hover{
 #modal-container.is-visible {
 /* CSS for modal container - add your own desired CSS styles here */
     display: block;
-}
-
-#show-modal, 
-#show-dialog {  /*this hide the show modal button on the main screen*/
-    display: none; 
 }
 
 .pokemon-image {

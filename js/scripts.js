@@ -23,6 +23,7 @@ function addListItem(pokemon) {
     let pokemonListItems = document.querySelector('.pokemon-list');
     
     let listItem = document.createElement('li');
+
     
     let button = document.createElement('button'); 
     button.innerText = pokemon.name;
@@ -122,6 +123,8 @@ function showModal(title, text) {
     
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
+
+    
     
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
