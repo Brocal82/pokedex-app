@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-.pokemon-button {
+.btn {
     display: inline-block;
     background-color: #f4dc26;
     border: 3px solid #FFAA00 ;
@@ -15,20 +15,21 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     cursor: pointer;
-    
-    
 }
 
-.pokemon-button:hover {
+.list-group-item {
+    background-color: transparent;
+    border: none;
+}
+    
+    
+
+.btn:hover {
     background-color: #3d7dca;
     border: 5px solid #003a70;
     color: white;
-}
-
-button:hover{
     opacity: 1;
-    font-size: 25px;
-    color: black; 
+    font-size: 25px; 
     transition: opacity 0.9s, 0.6s font-size;
 }
 
@@ -40,10 +41,10 @@ button:hover{
     padding: 80px;
 
 }
-.contain_header {
+/* .container_header {
     display: block;
     flex-direction: column;
-}
+} */
 
 .navbar {
     justify-content: center;
@@ -66,8 +67,8 @@ button:hover{
     list-style-type: none;
     padding: 50px;
     margin-top: 40px;
-    
 }
+    
 
 .pokemon_bg {
     background-image: url('images/pokeballs.jpg');
@@ -129,16 +130,16 @@ button:hover{
 
 .modal-close {
     float: right;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     border: 0;
     background: none;
     color: white;
     text-decoration: underline;
 }
 
-.modal-close:hover {
+/* .modal-close:hover {
     color: white;
-}
+} */
     
 
 .modal h1 {
@@ -194,6 +195,7 @@ button:hover{
 
 .a_footer:hover {
     color: #f4dc26;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
