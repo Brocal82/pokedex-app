@@ -104,7 +104,7 @@ function getPokemonTypes(types) {
 }
 
 }
-console.log('pokemon.types');
+
 
 return {
     add: add,
