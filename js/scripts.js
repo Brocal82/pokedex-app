@@ -97,9 +97,14 @@ let modalBodyHeight = document.querySelector('.modal-body-height');
 modalBodyHeight.innerText = `Height: ${pokemon.height}`;
 
 let modalBodyTypes = document.querySelector('.modal-body-types');
-modalBodyTypes.innerText = `Types: ${pokemon.types}`;
+modalBodyTypes.innerText = `Types: ${getPokemonTypes(pokemon.types)}`;
+
+function getPokemonTypes(types) {
+    return types.map(type => type.type.name).join(', ');
+}
 
 }
+console.log('pokemon.types');
 
 return {
     add: add,
