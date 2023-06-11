@@ -12,9 +12,9 @@
 <body>
 
     <header class="container-fluid img-fluid header">
-        <div class="container_header">
-            
-            <h1 class="titulo text-center">Pokemon App</h1>
+        
+        <div >
+            <h1 class="title text-center">Pokemon App</h1>
             
             <nav class="navbar navbar-dark bg-transparent navbar-expand-lg d-flex justify-content-center">
                 <a class="navbar-brand" href="#"></a>
@@ -38,7 +38,7 @@
 
 <!--Modal----------------------------------------------------------------------->
 
-<button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn-primary d-none" data-toggle="modal" data-target="#exampleModal">
     Show Modal
 </button>
 
@@ -72,7 +72,14 @@
     
                     
                 
+    <!-- <div id="modal-container"></div> -->
+    
+    <!-- <button id="show-modal" class="d-none">Show modal</button>
+    <button id="show-dialog" class="d-none">Show dialog</button> -->
                     
+    <main class="container-fluid img-fluid">
+        <ul class=" list-group pokemon-list pokemon_bg row justify-content-center"></ul>
+    </main>
                     
 
                         
@@ -82,16 +89,9 @@
 <!---------------------------------------------------------------------------------->
 
     
-    <div id="modal-container"></div>
-    
-    <button id="show-modal" class="d-none">Show modal</button>
-    <button id="show-dialog" class="d-none">Show dialog</button>
 
     
             
-    <main class="container-fluid img-fluid">
-        <ul class=" list-group pokemon-list pokemon_bg row justify-content-center"></ul>
-    </main>
 
 
 
