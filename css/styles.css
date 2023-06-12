@@ -25,6 +25,7 @@ body {
     font-size: 25px; 
     transition: opacity 0.9s, 0.6s font-size;
 }
+
 /* ----------HEADER------------------------------ */
 .header {
     background-image: url('images/pikachu.jpg');
@@ -56,7 +57,7 @@ body {
 /* ---------MAIN POKEMON LIST------------------------*/
 .pokemon-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     text-align: center;
     list-style-type: none;
@@ -156,6 +157,14 @@ body {
 }
 
 /* --------------------RESPONSIVE---------------------------- */
+@media (max-width: 1200px) {
+    .pokemon-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}
 @media (max-width: 768px) {
     .pokemon-list {
         display: grid;
