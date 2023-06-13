@@ -131,7 +131,7 @@ body {
 .modal-body-image {
     max-width: 100%;
     display: block;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     max-height: 300px;
     margin-left: auto;
     margin-right: auto;
