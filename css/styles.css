@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-/* --------------BUTTON (btn)-------------------------- */
+/*-BUTTON (btn)-*/
 .btn {
     display: inline-block;
     background-color: #f4dc26;
@@ -27,7 +27,7 @@ body {
     transition: opacity 0.9s, 0.6s font-size;
 }
 
-/* ----------HEADER------------------------------ */
+/*-HEADER-*/
 .header {
     background-color: #0D49d2;
     background-size: cover;
@@ -41,7 +41,7 @@ body {
     font-size: 80px;
 }
 
-/* ----------NAVIGATION MENU HAMBURGUESA ---------------------- */
+/* NAVIGATION MENU HAMBURGUESA -*/
 .navbar {
     justify-content: center;
 }
@@ -55,7 +55,7 @@ body {
     text-align: center;
 }
 
-/* ---------MAIN POKEMON LIST------------------------*/
+/*-MAIN POKEMON LIST-*/
 .pokemon-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -77,7 +77,7 @@ body {
     border: none;
 }
 
-/*-------------- MODAL -------------------------*/
+/*- MODAL -*/
 #modal-container {
     position: center;
     padding: 20px;
@@ -142,7 +142,7 @@ body {
     text-align: center;
 }
 
-/* -------------------FOOTER---------------------------- */
+/* FOOTER */
 .footer {
     text-align: center;
     background-color: #0D49d2;
@@ -158,7 +158,7 @@ body {
     text-decoration: none;
 }
 
-/* --------------------RESPONSIVE---------------------------- */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
     .pokemon-list {
         display: grid;
