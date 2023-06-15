@@ -41,19 +41,6 @@ body {
     font-size: 80px;
 }
 
-/* NAVIGATION MENU HAMBURGUESA -*/
-.navbar {
-    justify-content: center;
-}
-
-.navbar-nav {
-    margin: auto; /*centra horizontalmente los elementos del menu */
-    
-}
-
-.nav-item {
-    text-align: center;
-}
 
 /*-MAIN POKEMON LIST-*/
 .pokemon-list {
