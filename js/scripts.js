@@ -1,4 +1,4 @@
-let pokemonRepository = (function () {
+let pokemonRepository = ( () => {
 
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
@@ -18,9 +18,9 @@ let pokemonRepository = (function () {
 
     //Fetch data from the API
     function loadList() {
-        return fetch(apiUrl).then(function (response) {    //Get info from API
+        return fetch(apiUrl).then((response) => {    //Get info from API
             return response.json();                        //Translate it to json so all browsers can read 
-        }).then(function (json) {
+        }).then((json) => {
             json.results.forEach(function (item) {         // then loop on each pokemon over name and url (sprites)
                 let pokemon = {
                     name: item.name,
@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
                 };
                 add(pokemon);                              //and add it to the list
             })
-        }).catch(function (error) {                        //just in case the browser does not support
+        }).catch((error) => {                        //just in case the browser does not support
             console.log(error);
         })
     }
